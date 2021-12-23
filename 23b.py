@@ -27,7 +27,7 @@ def is_valid_move(board, character: str, source_index: int, destination_index: i
     if len(board[destination_index]) == 4:
         if destination_zones[character] != destination_index:
             return False
-        if not (set(".DDD") <= {".", "A"}):
+        if not (set(board[source_index]) <= {".", "A"}):
             return False
     return can_reach(board, source_index, destination_index)
 
